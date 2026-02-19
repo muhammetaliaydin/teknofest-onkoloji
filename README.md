@@ -1,6 +1,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/🧠-Beyin_Tümörü_Segmentasyonu-blue?style=for-the-badge" alt="badge">
   <img src="https://img.shields.io/badge/TEKNOFEST-2026-red?style=for-the-badge" alt="teknofest">
+  <img src="https://img.shields.io/badge/Onkolojide_3T-Yarışması-purple?style=for-the-badge" alt="3t">
   <img src="https://img.shields.io/badge/PyTorch-2.x-orange?style=for-the-badge&logo=pytorch" alt="pytorch">
   <img src="https://img.shields.io/badge/CUDA-12.6-green?style=for-the-badge&logo=nvidia" alt="cuda">
 </p>
@@ -9,7 +10,8 @@
 <h3 align="center">Yapay Zekâ Destekli Otomatik Beyin Tümörü Tespit ve Bölütleme Sistemi</h3>
 
 <p align="center">
-  <b>TEKNOFEST 2026 — Sağlıkta Yapay Zekâ Yarışması</b>
+  <b>TEKNOFEST 2026 — Onkolojide 3T Yarışması</b><br>
+  <i>CANSAĞLIĞI Vakfı Yürütücülüğünde</i>
 </p>
 
 ---
@@ -17,6 +19,7 @@
 ## 📋 İçindekiler
 
 - [Proje Özeti](#-proje-özeti)
+- [Yarışma Hakkında — Onkolojide 3T](#-yarışma-hakkında--onkolojide-3t)
 - [Problem Tanımı](#-problem-tanımı)
 - [Veri Seti](#-veri-seti)
 - [Yöntem ve Yaklaşım](#-yöntem-ve-yaklaşım)
@@ -34,7 +37,9 @@
 
 ## 🎯 Proje Özeti
 
-Bu proje, beyin Manyetik Rezonans Görüntüleme (MRG) taramalarından **tümör bölgelerinin otomatik olarak tespit edilmesi ve piksel düzeyinde bölütlenmesi** (segmentasyon) amacıyla geliştirilmiş derin öğrenme tabanlı bir yapay zekâ sistemidir.
+Bu proje, **TEKNOFEST 2026 Onkolojide 3T Yarışması** kapsamında geliştirilmiş olup, beyin Manyetik Rezonans Görüntüleme (MRG) taramalarından **tümör bölgelerinin otomatik olarak tespit edilmesi ve piksel düzeyinde bölütlenmesi** (segmentasyon) amacıyla derin öğrenme tabanlı bir yapay zekâ sistemi sunmaktadır.
+
+Yarışmanın 2026 yılı tedavi hedefi **Beyin Kanseri** olarak belirlenmiştir. Projemiz, onkolojide 3T'nin (Tarama, Tanı, Tedavi) özellikle **Tanı** ayağına odaklanarak, MRG görüntülerinden yapay zekâ destekli otomatik tümör tespiti gerçekleştirmektedir.
 
 Sistem, hastanın beyin MRG taramasını girdi olarak alır ve iki temel çıktı üretir:
 
@@ -45,6 +50,67 @@ Sistem, hastanın beyin MRG taramasını girdi olarak alır ve iki temel çıkt�
 
 > [!IMPORTANT]
 > Bu sistem araştırma ve yarışma amaçlıdır. Klinik ortamda kullanılması için kapsamlı validasyon, regülatör onay ve klinik deneyler gereklidir.
+
+---
+
+## 🏆 Yarışma Hakkında — Onkolojide 3T
+
+### 3T Nedir?
+
+**Onkolojide 3T Yarışması**, CANSAĞLIĞI Vakfı yürütücülüğünde düzenlenen ve kanser tedavisinde bireyselleştirilmiş, hassas tedavi teknolojilerinin geliştirilmesini teşvik eden bir TEKNOFEST yarışmasıdır. **3T**, onkoloji alanındaki üç kritik aşamayı temsil etmektedir:
+
+```mermaid
+flowchart LR
+    T1["🔍 TARAMA\n(Screening)"] --> T2["🩺 TANI\n(Diagnosis)"]
+    T2 --> T3["💊 TEDAVİ\n(Treatment)"]
+    
+    style T1 fill:#2196F3,color:#fff,stroke:#1565C0
+    style T2 fill:#9C27B0,color:#fff,stroke:#6A1B9A
+    style T3 fill:#4CAF50,color:#fff,stroke:#2E7D32
+```
+
+| Aşama | Açıklama | Projemizdeki Karşılığı |
+|---|---|---|
+| **🔍 Tarama** | Erken evrede kanser şüphesinin belirlenmesi | MRG kesitlerinde tümörlü/tümörsüz sınıflandırma |
+| **🩺 Tanı** | Kanserin kesin lokalizasyonu ve karakterizasyonu | Piksel düzeyinde tümör segmentasyonu |
+| **💊 Tedavi** | Bireyselleştirilmiş tedavi planlaması | Tümör hacmi ve konum bilgisi ile cerrahi/radyoterapi planlama desteği |
+
+### 2026 Yılı Odak Alanı
+
+Yarışmanın 2026 yılındaki ana odağı **Beyin Kanseri** olarak belirlenmiştir. Beklenen çalışma alanları arasında:
+
+- 🧬 **Genetik ve Epigenetik Yaklaşımlar** — CRISPR/Cas9, gen düzenleme
+- 🔬 **Hücresel ve Moleküler Tedaviler** — İmmünoterapi, CAR-T hücre tedavileri
+- 🤖 **Yapay Zekâ Destekli Çözümler** — Görüntü analizi, ilaç geliştirme
+- 💉 **Terapötik Kanser Aşı Teknolojileri** — RNA/DNA bazlı aşılar
+
+> Projemiz, bu alanlardan **Yapay Zekâ Destekli Çözümler** kategorisinde yer almakta olup, beyin MRG görüntülerinden otomatik tümör segmentasyonu gerçekleştirmektedir.
+
+### Yarışma Takvimi
+
+| Aşama | Tarih |
+|---|---|
+| Son Başvuru | 20 Şubat 2026 |
+| Ön Değerlendirme Raporu (ÖDR) Teslimi | 31 Mart 2026, 17:00 |
+| Ön Eleme Sonuçları | 6 Nisan 2026 |
+| Yarı Final Raporu Teslimi | 8 Haziran 2026, 17:00 |
+| Finalistlerin Açıklanması | 22 Haziran 2026 |
+| Yarışma Finalleri | TEKNOFEST Şanlıurfa (30 Eylül – 4 Ekim 2026) |
+
+### Ödüller
+
+| Derece | Ödül |
+|---|---|
+| 🥇 **Birinci** | 400.000 ₺ |
+| 🥈 **İkinci** | 300.000 ₺ |
+| 🥉 **Üçüncü** | 200.000 ₺ |
+| **Toplam** | **900.000 ₺** |
+
+### Katılım Koşulları
+
+- Takımlar **en az 3, en fazla 5 üyeden** oluşmalıdır (+ zorunlu danışman)
+- T.C. vatandaşı veya yabancı uyruklu **lisans, yüksek lisans ve doktora öğrencileri** katılabilir
+- Doktora mezunları yalnızca **danışman** olarak yer alabilir
 
 ---
 
@@ -516,12 +582,12 @@ TeknofestOnkoloji/
 
 ## 📜 Lisans
 
-Bu proje **TEKNOFEST 2026 Sağlıkta Yapay Zekâ Yarışması** kapsamında geliştirilmiştir.
+Bu proje **TEKNOFEST 2026 Onkolojide 3T Yarışması** kapsamında, CANSAĞLIĞI Vakfı yürütücülüğünde geliştirilmiştir.
 
 > ⚠️ **Uyarı:** Bu model araştırma ve yarışma amaçlıdır. Klinik ortamda tanı veya tedavi amaçlı kullanılamaz. Tıbbi karar süreçlerinde mutlaka uzman hekime danışılmalıdır.
 
 ---
 
 <p align="center">
-  <b>TEKNOFEST 2026 🇹🇷</b>
+  <b>TEKNOFEST 2026 — Onkolojide 3T Yarışması 🇹🇷</b>
 </p>
