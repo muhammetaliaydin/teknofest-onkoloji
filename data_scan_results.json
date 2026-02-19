@@ -1,0 +1,23 @@
+{
+  "total_patients": 203,
+  "total_timepoints": 596,
+  "total_files": 2978,
+  "total_size_gb": 11.07,
+  "timepoints_with_mask": 594,
+  "timepoints_without_mask": 2,
+  "file_extensions": {
+    ".nii.gz": 2978
+  },
+  "modalities": {
+    "brain_t1c": 596,
+    "brain_t1n": 596,
+    "brain_t2f": 596,
+    "brain_t2w": 596,
+    "tumorMask": 594
+  },
+  "priority": "PRIORITY_1_SEGMENTATION",
+  "samples_without_mask": [
+    "PatientID_0187/Timepoint_3",
+    "PatientID_0191/Timepoint_1"
+  ]
+}

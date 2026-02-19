@@ -1,0 +1,97 @@
+======================================================================
+STEP 1: MEMORY-SAFE DATA EXPLORATION
+======================================================================
+
+[DIR] Total patient directories: 203
+   Patient ID range: 3 - 275
+   Missing IDs in range: 70 IDs missing
+
+----------------------------------------------------------------------
+TIMEPOINT ANALYSIS
+----------------------------------------------------------------------
+
+[STATS] Total timepoints across all patients: 596
+   Timepoints per patient distribution:
+     1 timepoint(s): 48 patients
+     2 timepoint(s): 45 patients
+     3 timepoint(s): 50 patients
+     4 timepoint(s): 17 patients
+     5 timepoint(s): 18 patients
+     6 timepoint(s): 25 patients
+
+----------------------------------------------------------------------
+FILE TYPE ANALYSIS
+----------------------------------------------------------------------
+
+[FILES] Total files: 2978
+   Total dataset size: 11.07 GB
+
+   File extensions found:
+     .nii.gz: 2978 files (avg size: 3.8 MB)
+
+   Modality/file type breakdown:
+     brain_t1c: 596 files
+     brain_t1n: 596 files
+     brain_t2f: 596 files
+     brain_t2w: 596 files
+     tumorMask: 594 files
+
+----------------------------------------------------------------------
+SEGMENTATION MASK ANALYSIS (CLASS DISTRIBUTION)
+----------------------------------------------------------------------
+
+[MASKS] Timepoints WITH tumor mask:    594 (99.7%)
+   Timepoints WITHOUT tumor mask: 2 (0.3%)
+   Total timepoint samples:       596
+
+----------------------------------------------------------------------
+PATIENT-LEVEL ANALYSIS
+----------------------------------------------------------------------
+
+[PATIENTS] ALL timepoints have masks: 201
+   SOME timepoints have masks: 2
+   NO timepoints have masks:   0
+
+----------------------------------------------------------------------
+SAMPLE TIMEPOINTS WITHOUT MASKS (first 15)
+----------------------------------------------------------------------
+   [NO MASK] PatientID_0187/Timepoint_3
+   [NO MASK] PatientID_0191/Timepoint_1
+
+======================================================================
+PRIORITY DECISION
+======================================================================
+
+>> PRIORITY 1 -- CANCER REGION SEGMENTATION confirmed!
+
+Evidence:
+  - Dataset contains .nii.gz (NIfTI) 3D volumetric brain MRI scans
+  - 4 MRI modalities per scan: T1c, T1n, T2-FLAIR, T2w
+  - Pixel-level tumor segmentation masks (tumorMask.nii.gz) are present
+  - 594 out of 596 timepoints have tumor masks
+  - This is a standard brain tumor segmentation dataset (BraTS-style)
+
+Recommended approach:
+  -> U-Net-based 3D/2D segmentation model
+  -> Multi-modal input (stack 4 MRI sequences as channels)
+  -> Binary or multi-class tumor segmentation
+  -> Post-segmentation classification (tumor present vs absent)
+
+----------------------------------------------------------------------
+GPU MEMORY ESTIMATION
+----------------------------------------------------------------------
+
+Assumptions (to be verified after loading 1 sample):
+  - NIfTI volumes likely ~240x240x155 voxels (standard BraTS)
+  - 4 modalities x 240x240x155 x 4 bytes (float32) = ~57 MB per sample
+  - With batch_size=2 + model + gradients: ~4-6 GB GPU memory
+  - Mixed precision (FP16) would reduce to ~3-4 GB
+  
+Recommendation:
+  - Start with batch_size=2 for 3D volumes
+  - Use 2D slice-based approach if GPU memory < 8 GB
+  - 2D slices: 4x240x240 x 4 bytes = ~0.9 MB per slice (very manageable)
+
+
+[SAVED] Scan results saved to: c:\Users\mali\Documents\Projects\TeknofestOnkoloji\data_scan_results.json
+======================================================================

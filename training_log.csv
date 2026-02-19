@@ -1,0 +1,2 @@
+epoch,lr,train_loss,train_dice,train_iou,val_loss,val_dice,val_iou,val_precision,val_recall,val_accuracy,epoch_time_sec
+1,0.000400,0.531512,0.511342,0.404372,0.466505,0.540204,0.481359,0.557789,0.835412,0.995734,1601.301998

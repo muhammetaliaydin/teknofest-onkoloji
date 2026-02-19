@@ -1,0 +1,15 @@
+Testing model architecture...
+Total parameters:     13,208,802
+Trainable parameters: 13,208,802
+
+Segmentation output:    torch.Size([2, 1, 256, 256])
+Segmentation output:    torch.Size([2, 1, 256, 256])
+Classification output:  torch.Size([2, 1])
+
+Total loss: 0.6238
+Seg loss:   0.6285
+Cls loss:   0.6051
+
+Metrics: {'dice': 0.5456919074058533, 'iou': 0.37522444128990173, 'precision': 0.4966927468776703, 'recall': 0.6054168343544006, 'accuracy': 0.49823760986328125}
+
+Model test PASSED!
